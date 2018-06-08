@@ -53,6 +53,14 @@ class TestBaseModelClass(unittest.TestCase):
         self.assertTrue(isinstance(self.bm1, BaseModel))
         self.assertEqual(self.bm1.created_at, self.bm1.updated_at)
 
+    def test_base_model_str(self):
+        """test the __str__ implementation
+        """
+        self.assertEqual(str(self.bm1),
+                         "[{}] ({}) {}".format(self.bm1.__class__.__name__,
+                                               self.bm1.id,
+                                               str(self.bm1.__dict__)))
+
     def test_base_model_save(self):
         """test the save method
         """
