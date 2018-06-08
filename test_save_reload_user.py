@@ -17,4 +17,3 @@ my_user.email = "airbnb@holbertonshool.com"
 my_user.password = "root"
 my_user.save()
 print(my_user)
-
