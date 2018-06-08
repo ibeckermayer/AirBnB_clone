@@ -52,6 +52,12 @@ class TestBaseModelClass(unittest.TestCase):
         """
         self.assertTrue(isinstance(self.bm1, BaseModel))
         self.assertEqual(self.bm1.created_at, self.bm1.updated_at)
+        # bm1_dict = self.bm1.to_dict()
+        # bm2 = BaseModel(bm1_dict)
+        # print(bm1_dict)
+        # print(bm2.to_dict())
+        # self.assertEqual(self.bm1, bm2)
+        # self.assertFalse(self.bm1 is bm2)
 
     def test_base_model_str(self):
         """test the __str__ implementation
@@ -71,9 +77,26 @@ class TestBaseModelClass(unittest.TestCase):
         """test the to_dict method
         """
         bm1_dict = self.bm1.to_dict()
+        self.assertIsInstance(bm1_dict, dict)
         self.assertIsInstance(bm1_dict['created_at'], str)
+        self.assertEqual(bm1_dict['created_at'],
+                         self.bm1.created_at.isoformat())
         self.assertIsInstance(bm1_dict['updated_at'], str)
+        self.assertEqual(bm1_dict['updated_at'],
+                         self.bm1.updated_at.isoformat())
         self.assertIsInstance(bm1_dict['id'], str)
+        self.assertEqual(bm1_dict['id'], self.bm1.id)
         self.assertEqual(bm1_dict['__class__'], 'BaseModel')
         self.assertEqual(bm1_dict['my_number'], 89)
         self.assertEqual(bm1_dict['name'], 'Holberton')
+
+    def test_base_model_init_kwargs(self):
+        """test the init method with kwargs
+        """
+        bm1_dict = self.bm1.to_dict()
+        bm2 = BaseModel(**bm1_dict)
+        self.assertFalse(self.bm1 is bm2)
+        self.assertNotEqual(self.bm1, bm2)
+        self.assertEqual(self.bm1.id, bm2.id)
+        self.assertEqual(self.bm1.created_at, bm2.created_at)
+        self.assertEqual(self.bm1.updated_at, bm2.updated_at)
