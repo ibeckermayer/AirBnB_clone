@@ -2,6 +2,7 @@
 """
 import uuid
 import datetime
+import models
 
 
 class BaseModel(object):
@@ -18,15 +19,22 @@ class BaseModel(object):
         """
         fmt = "%Y-%m-%dT%H:%M:%S.%f"
         if kwargs:
-            self.id = kwargs['id']
-            self.created_at = datetime.datetime.strptime(kwargs['created_at'],
-                                                         fmt)
-            self.updated_at = datetime.datetime.strptime(kwargs['updated_at'],
-                                                         fmt)
+            for key, val in kwargs.items():
+                if key == "created_at":
+                    self.created_at = datetime.datetime.strptime(
+                        kwargs['created_at'], fmt)
+                elif key == "updated_at":
+                    self.updated_at = datetime.datetime.strptime(
+                        kwargs['updated_at'], fmt)
+                elif key == "__class__":
+                    pass
+                else:
+                    setattr(self, key, val)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
             self.updated_at = self.created_at
+            models.storage.new(self)
 
     def __str__(self):
         """[<class name>] (<self.id>) <self.__dict__>
@@ -42,6 +50,7 @@ class BaseModel(object):
            with the current datetime
         """
         self.updated_at = datetime.datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values of
