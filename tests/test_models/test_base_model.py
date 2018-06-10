@@ -100,3 +100,5 @@ class TestBaseModelClass(unittest.TestCase):
         self.assertEqual(self.bm1.id, bm2.id)
         self.assertEqual(self.bm1.created_at, bm2.created_at)
         self.assertEqual(self.bm1.updated_at, bm2.updated_at)
+        self.assertEqual(self.bm1.my_number, bm2.my_number)
+        self.assertEqual(self.bm1.name, bm2.name)
