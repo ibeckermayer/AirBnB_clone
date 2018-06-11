@@ -1,41 +1,39 @@
 # 0x00. AirBnB clone - The console
-## 0. README, AUTHORS
-***
-Write a beautiful code that passes the PEP8 checks
 
-## 1. Be PEP8 compliant!
-***
-All your files, classes, functions must be tested with unit tests
+<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/263/HBTN-hbnb-Final.png"/>
 
-## 2. Unittests
-***
-Write a class BaseModel that defines all common attributes/methods for other classes:
+## Overview
+AirBnB clone project the console, where we created a command interpreter to manage our AirBnB objects. The console allows us to create a new objects, retrieve an object from a file, a database etc, perform operations on objects such as count, compute stats, etc, update the attributes of an object, and destroy an object.
 
-## 3. BaseModel
-***
-Previously we create a method to generate a dictionary representation of an instance (method to_dict()).
+## Table of Contents
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Authors](#authors)
 
-## 4. Create BaseModel from dictionary
-***
-Now we can recreate a BaseModel from another one by using a dictionary representation:
+## Requirements
 
-## 5. Store first object
-***
-Write a program called console.py that contains the entry point of the command interpreter:
+#### Environment 
+Ubuntu 14.04 LTS
 
-## 6. Console 0.0.1
-***
-Update your command interpreter (console.py) to have these commands:
+#### Python version
+Python 3.4.3
 
-## 7. Console 0.1
-***
-Write a class User that inherits from BaseModel:
 
-## 8. First User
-***
-Write all those classes that inherit from BaseModel:
+#### Style
+PEP 8 (v.1.7)
 
-## 9. More classes!
-***
-Update FileStorage to manage correctly serialization and deserialization of all our new classes: Place, State, City, Amenity and Review
+## Installation
 
+* Clone Repo
+```
+https://github.com/ibeckermayer/AirBnB_clone.git
+```
+
+## Usage
+
+## Authors
+
+* Armando Nuno [Twitter](https://twitter.com/mandonuno) [Github](https://github.com/mandonuno)
+
+* Isaiah Becker-Mayer [Twitter](https://twitter.com/ibeckermayer) [Github](https://github.com/ibeckermayer)
