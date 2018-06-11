@@ -1,14 +1,26 @@
 #!/usr/bin/python3
 """console module"""
 import cmd
-from models.base_model import BaseModel
 import models
 import shlex
+from models.amenity import Amenity
+from models.base_model import BaseModel
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     """command interpreter class for HBNB"""
-    available_models = ["BaseModel"]
+    available_models = ["BaseModel",
+                        "Amenity",
+                        "City",
+                        "Place",
+                        "Review",
+                        "State",
+                        "User"]
     prompt = '(hbnb) '
     storage = models.storage
 
