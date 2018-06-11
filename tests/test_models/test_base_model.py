@@ -13,16 +13,16 @@ class TestBaseModelClass(unittest.TestCase):
     '''
 
     @classmethod
-    def setUpClass(cls):
-        """create class for testing
+    def setUp(cls):
+        """create class for each test
         """
         cls.bm1 = BaseModel()
         cls.bm1.name = "Holberton"
         cls.bm1.my_number = 89
 
     @classmethod
-    def tearDownClass(cls):
-        """delete class after testing
+    def tearDown(cls):
+        """delete class after each test
         """
         del cls.bm1
 
@@ -32,10 +32,10 @@ class TestBaseModelClass(unittest.TestCase):
         style = pep8.StyleGuide(quiet=True)
         p = style.check_files(['models/base_model.py'])
         self.assertEqual(p.total_errors, 0,
-                         'pep8 error in models/base_model.py!')
+                         'pep8 error in base_model.py!')
         p = style.check_files(['tests/test_models/test_base_model.py'])
         self.assertEqual(p.total_errors, 0,
-                         'pep8 error in tests/test_models/test_base_model.py!')
+                         'pep8 error in test_base_model.py!')
 
     def test_base_model_docstrings(self):
         """test docstrings
