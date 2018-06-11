@@ -102,14 +102,18 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, model):
         if not model:
+            plist = []
             for key, obj in self.storage.all().items():
-                print(obj)
+                plist.append(obj)
+            print([str(x) for x in plist])
         elif model not in self.available_models:
             print("** class doesn't exist **")
         else:
+            plist = []
             for key, obj in self.storage.all().items():
                 if obj.__class__.__name__ == model:
-                    print(obj)
+                    plist.append(str(obj))
+            print([str(x) for x in plist])
 
     def do_update(self, model_id_attr_val):
         model_id_attr_val_list = shlex.split(model_id_attr_val)
@@ -170,3 +174,4 @@ def cast_int_float_or_str(val):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
+
