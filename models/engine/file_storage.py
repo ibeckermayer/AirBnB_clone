@@ -1,6 +1,7 @@
 """Module for file storage
 """
 import json
+import os
 from models.base_model import BaseModel
 
 
@@ -42,6 +43,11 @@ class FileStorage(object):
                 ser_dict[key] = obj.to_dict()
             with open(self.__file_path, 'w') as f:
                 json.dump(ser_dict, f)
+        else:
+            try:
+                os.remove(self.__file_path)
+            except FileNotFoundError:
+                pass
 
     def reload(self):
         """deserializes the JSON file to __objects (only if the JSON file
