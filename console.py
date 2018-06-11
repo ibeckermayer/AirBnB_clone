@@ -63,7 +63,7 @@ class HBNBCommand(cmd.Cmd):
                 return
 
     def do_destroy(self, model_and_id):
-        """Prints the string of an instance based on the class name and id
+        """destroys an instance based on the class name and id
         """
         model_and_id_list = model_and_id.split()
         if len(model_and_id_list) == 0:
@@ -86,6 +86,17 @@ class HBNBCommand(cmd.Cmd):
             except KeyError:
                 print("** no instance found **")
                 return
+
+    def do_all(self, model):
+        if not model:
+            for key, obj in self.storage.all().items():
+                print(obj)
+        elif model not in self.available_models:
+            print("** class doesn't exist **")
+        else:
+            for key, obj in self.storage.all().items():
+                if obj.__class__.__name__ == model:
+                    print(obj)
 
 
 if __name__ == '__main__':
