@@ -35,10 +35,9 @@ class HBNBCommand(cmd.Cmd):
         elif model not in self.available_models:
             print("** class doesn't exist **")
         else:
-            if model == "BaseModel":
-                bm = BaseModel()
-                bm.save()
-                print(bm.id)
+            obj = eval(model)()
+            obj.save()
+            print(obj.id)
 
     def do_show(self, model_and_id):
         """Prints the string of an instance based on the class name and id
