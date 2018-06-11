@@ -174,4 +174,3 @@ def cast_int_float_or_str(val):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
