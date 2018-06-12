@@ -102,6 +102,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, model):
         if not model:
+            # print(self.storage.all())
             plist = []
             for key, obj in self.storage.all().items():
                 plist.append(obj)

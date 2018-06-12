@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """module for BaseModel
 """
 import uuid
@@ -43,7 +44,7 @@ class BaseModel(object):
             str: [<class name>] (<self.id>) <self.__dict__>
         """
         return "[{}] ({}) {}".format(self.__class__.__name__,
-                                     self.id, str(self.__dict__))
+                                     self.id, self.__dict__)
 
     def save(self):
         """updates the public instance attribute updated_at
