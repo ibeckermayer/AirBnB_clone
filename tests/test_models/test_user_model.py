@@ -46,4 +46,4 @@ class User_Test(unittest.TestCase):
         """Tests for last name type"""
         user = User()
         last_name_type = getattr(user, "last_name")
-        self.assertIsInstance(last_name_type str)
+        self.assertIsInstance(last_name_type, str)
