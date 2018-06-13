@@ -101,6 +101,9 @@ class HBNBCommand(cmd.Cmd):
                 return
 
     def do_all(self, model):
+        """Prints all string representation of all instances based or not on
+        the class name
+        """
         if not model:
             # print(self.storage.all())
             plist = []
@@ -117,6 +120,9 @@ class HBNBCommand(cmd.Cmd):
             print([str(x) for x in plist])
 
     def do_update(self, model_id_attr_val):
+        """Updates an instance based on the class name and id by adding or
+        updating attribute
+        """
         model_id_attr_val_list = shlex.split(model_id_attr_val)
         if len(model_id_attr_val_list) == 0:
             print("** class name missing **")
