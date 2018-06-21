@@ -4,6 +4,8 @@
     width: 100%;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
     position: relative;
 }
 
@@ -17,5 +19,4 @@ button {
     border-radius: 4px;
     position: absolute;
     right: 30px;
-    top: 11px;
 }
