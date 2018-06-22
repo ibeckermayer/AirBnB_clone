@@ -1,0 +1,94 @@
+.filters {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.filter_dropdowns {
+    width: 50%;
+    display: flex;
+}
+
+button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    border: hidden;
+    border-radius: 4px;
+    position: absolute;
+    right: 30px;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.locations, .amenities {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.locations h3, .amenities h3 {
+    font-weight: 600;
+    margin:0
+}
+
+.locations h4, .amenities h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin:0;
+}
+
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+
+.popover.locations, .popover.amenities {
+    width: 50%;
+    align-content: center;
+}
+
+.h3h4 {
+    position: absolute;
+    left: 50px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding-bottom: 5px;
+}
+
+.popover {
+    display:flex;
+    flex-direction:column;
+    padding :30px 0px 30px 40px;
+    margin:0;
+    align-items: stretch;
+    background-color: #FAFAFA;
+    height: 100%;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+
+}
+
+.popover h2 {
+    margin: 0;
+}
+
+.popover > li > ul {
+    margin-bottom: 10px;
+}
+
