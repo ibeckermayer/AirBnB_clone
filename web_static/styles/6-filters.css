@@ -33,8 +33,9 @@ button:hover {
 .locations, .amenities {
     height: 100%;
     width: 25%;
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
     position: relative;
 }
 
@@ -53,14 +54,50 @@ button:hover {
     border-right: 1px solid #DDDDDD;
 }
 
-.popover.locations, .popover.amenities {
-    width: 50%;
-    align-content: center;
+.popover.locations { 
+    width: 249px;
+    position: relative;
+    top: 70px;
+    padding: 0;
+    height: 200px;
+    display:none;
 }
 
-.h3h4 {
+.popover.amenities {
+    width: 249px;
+    position: relative;
+    top: 70px;
+    padding: 0;
+    height: 120px;
+    display:none;
+}
+
+.locations:hover .popover.locations {
+    display:block;
+}
+
+.amenities:hover .popover.amenities {
+    display:block;
+}
+
+.big_list_title {
+    margin-top: 20px;
+}
+
+li {
+    margin-left: 30px;
+}
+
+.first_li {
+    margin-top: 20px;
+}
+
+.filter_lab {
     position: absolute;
     left: 50px;
+    top: 17px;
+    flex:1;
+
 }
 
 ul {
